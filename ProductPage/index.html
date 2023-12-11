@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鼠於泥</title>
+
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/solid.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- SWIPER CSS -->
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+
+    <link rel="stylesheet" href="dist/charts.min.css">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+
+    <link rel="stylesheet" href="static/main.css">
+
+    
+
+
+
+</head>
+
+<body>
+      <!-- 禁用F12 -->
+    <script>
+        // disable right click
+        document.addEventListener('contextmenu', event => event.preventDefault());
+     
+        document.onkeydown = function (e) {
+     
+            // disable F12 key
+            if(e.keyCode == 123) {
+                return false;
+            }
+     
+            // disable I key
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 73){
+                return false;
+            }
+     
+            // disable J key
+            if(e.ctrlKey && e.shiftKey && e.keyCode == 74) {
+                return false;
+            }
+     
+            // disable U key
+            if(e.ctrlKey && e.keyCode == 85) {
+                return false;
+            }
+        }
+     
+    </script>
+
+
+    <div id="app"></div>
+  <script src="https://cdn.jsdelivr.net/npm/@right-menu/core@latest"></script>
+  <script>
+    const rm = new RightMenu({
+      el: window
+    }, [
+      {
+        type: 'ul',
+        text: `關於 | About 鼠於泥`,
+        children: [
+          {
+            type: 'li',
+            text: `最新@版本 | version@latest`,
+            disabled: true
+          },
+          { type: 'hr' },
+          {
+            type: 'li',
+            text: '<i class="fas fa-home nav-link-icon"></i>&nbsp&nbsp主頁 | Home',
+            callback: () => {
+        window.location.href = '../index.html'
+      }
+          },
+          {
+            type: 'li',
+            text: '<i class="fas fa-file-alt nav-link-icon"></i>&nbsp&nbsp&nbsp鼠鼠',
+            callback: () => {
+        window.location.href = '#hamster'
+      }
+          },
+          { type: 'hr' },
+          {
+            type: 'li',
+            text: '📋 版權 | License',
+            callback: () => alert('版權 | CopyRight By 鼠於泥')
+          }
+        ]
+      }
+    ])
+    window.$docsify = {
+      name: '首页',
+      nameLink: '/right-menu/',
+      // 主题色
+      themeColor: '#6190e8',
+      // 入口文件
+      homepage: 'README.md',
+      // 右上方渲染github挂钟
+      repo: 'buuing/right-menu',
+      // 定制侧边栏
+      loadSidebar: true,
+      // 抓取目录渲染
+      maxLevel: 3,
+      subMaxLevel: 3,
+      // 开启封面页
+      coverpage: false,
+      // 切换页面后跳到顶部
+      auto2top: false,
+      // 小屏设备下合并导航栏到侧边栏
+      mergeNavbar: true,
+      // 开启导航栏
+      loadNavbar: false,
+      // 路由
+      alias: {
+        '/.*/_sidebar.md': '/_sidebar.md',
+      },
+      // 搜索框
+      search: {
+        // 目录
+        paths: 'auto',
+        // 默认文字
+        placeholder: '搜索',
+        // 404显示
+        noData: '找不到结果'
+      },
+      executeScript: true,
+      // mini sandbox 公共配置
+      sandboxOptions: {
+        resource: {
+          css: `
+            .right-menu {
+              height: 100px;
+              background: #ccc;
+              text-align: center;
+              line-height: 100px;
+            }
+          `,
+          js: `
+            window.options = [
+              { type: 'li', text: 'asd' }
+            ]
+          `,
+          jsLibs: ['https://cdn.jsdelivr.net/npm/@right-menu/core@latest']
+        },
+        defaultConfig: {
+          height: '350px',
+          editorRange: '50%',
+        },
+      },
+    }
+  </script>
+
+
+ 
+
+    <!-- HEADER -->
+    <header class="header" id="header">
+        <nav class="nav container">
+            <a href="../index.html" class="nav-logo">鼠於泥</a>
+
+            <div class="nav-menu" id="nav-menu">
+                <ul class="nav-list grid">
+                    <li class="nav-item">
+                        <a href="../index.html" class="nav-link active-link">
+                            <i class="fas fa-home nav-link-icon"></i> 主頁 
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#hamster" class="nav-link">
+                            <i class="fas fa-user nav-link-icon"></i> 鼠鼠
+                        </a>
+                    </li>
+                </ul>
+
+                <i class="fas fa-times nav-close" id="nav-close"></i>
+            </div>
+            <div class="nav-btns">
+
+                <!-- Theme change button -->
+                <i class="fas fa-moon change-theme" id="theme-button"></i>
+
+                <div class="nav-toggle" id="nav-toggle">
+                    <i class="fas fa-qrcode"></i>
+                </div>
+            </div>
+
+            
+        </nav>
+
+    </header>
+
+
+    <!-- MAIN -->
+    <main class="main">
+        <!-- ue -->
+        <section class="services section" id="hamster">
+            <h2 class="section-title">鼠鼠 | 波利</h2>
+            <span class="section-subtitle">品種鼠 </span>
+
+            <div class="services-container container grid">
+                
+                <!-- UE 1 -->
+                <div class="services-content">
+                    
+                    <div>
+                        <img src="img/2311210203520254.jpg" alt="ue" class="ue-img">
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">編號 ： NG-001</div>
+                        <h3 class="services-title">葛灰波利</h3>
+                        <div class="d-flex justify-content-center small text-warning mb-2">
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                        </div>
+                    </div>
+
+                    <span class="text-muted text-decoration-line-through">TWD 6000</span>
+                    <br>
+                    <h3 class="services-title">TWD 4500</h3>
+                    <br>
+                        <a href="https://www.facebook.com/hamsterforeverlove" target="_blank" ="nav-link button-small button-link">
+                            立即預購
+                            <i class="fas fa-arrow-right button-icon"></i>
+                        </a>
+                </div>
+
+                <!-- UE 2 -->
+                <div class="services-content">
+                    
+                    <div>
+                        <img src="img/2311210203519928.jpg" alt="ue" class="ue-img">
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">編號 ： XCM-001</div>
+                        <h3 class="services-title">黑波利</h3>
+                        <div class="d-flex justify-content-center small text-warning mb-2">
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                        </div>
+                    </div>
+
+                    <span class="text-muted text-decoration-line-through">TWD 8000</span>
+                    <br>
+                    <h3 class="services-title">TWD 5500</h3>
+                    <br>
+                        <a href="https://www.facebook.com/hamsterforeverlove" target="_blank" ="nav-link button-small button-link">
+                            立即預購
+                            <i class="fas fa-arrow-right button-icon"></i>
+                        </a>
+                </div>
+
+                <!-- UE 3 -->
+                <div class="services-content">
+                    
+                    <div>
+                        <img src="img/xcm1.jpg" alt="ue" class="ue-img">
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">編號 ： HSL-001</div>
+                        <h3 class="services-title">長毛黑波利</h3>
+                        <div class="d-flex justify-content-center small text-warning mb-2">
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                        </div>
+                    </div>
+
+                    <span class="text-muted text-decoration-line-through">TWD 5000</span>
+                    <br>
+                    <h3 class="services-title">TWD 3800</h3>
+                    <br>
+                        <a href="https://www.facebook.com/hamsterforeverlove" target="_blank" ="nav-link button-small button-link">
+                            立即預購
+                            <i class="fas fa-arrow-right button-icon"></i>
+                        </a>
+                </div>
+
+                <!-- UE 4 -->
+                <div class="services-content">
+                    
+                    <div>
+                        <img src="img/2311210203520059.jpg" alt="ue" class="ue-img">
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">編號 ： HC-001</div>
+                        <h3 class="services-title">肉桂波利</h3>
+                        <div class="d-flex justify-content-center small text-warning mb-2">
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                        </div>
+                    </div>
+
+                    <span class="text-muted text-decoration-line-through">TWD 4000</span>
+                    <br>
+                    <h3 class="services-title">TWD 3600</h3>
+                    <br>
+                        <a href="https://www.facebook.com/hamsterforeverlove" target="_blank" ="nav-link button-small button-link">
+                            立即預購
+                            <i class="fas fa-arrow-right button-icon"></i>
+                        </a>
+                </div>
+            
+                <!-- UE 5 -->
+                <div class="services-content">
+                    
+                    <div>
+                        <img src="img/2311210203520158.jpg" alt="ue" class="ue-img">
+                        <div class="badge bg-dark text-white position-absolute" style="top: 0.5rem; right: 0.5rem">編號 ： AZ-001</div>
+                        <h3 class="services-title">眼線火紋波利</h3>
+                        <div class="d-flex justify-content-center small text-warning mb-2">
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                            <div class="bi-star-fill"></div>
+                        </div>
+                    </div>
+
+                    <span class="text-muted text-decoration-line-through">TWD 3000</span>
+                    <br>
+                    <h3 class="services-title">TWD 2500</h3>
+                    <br>
+                        <a href="https://www.facebook.com/hamsterforeverlove" target="_blank" ="nav-link button-small button-link">
+                            立即預購
+                            <i class="fas fa-arrow-right button-icon"></i>
+                        </a>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- PROJECT IN MIND -->
+        <section class="project section">
+            <div class="project-bg">
+                <div class="project-container container grid">
+                    <div class="project-data">
+                        <h2 class="project-bg-title">需要了解更多?<br>Need to know more</h2>
+                        <p class="project-bg-description">馬上聯絡我了解更多 <br>Contact me now to learn more</p>
+                        <a href="https://www.facebook.com/hamsterforeverlove" target="_blank" class="button button-flex button-white">
+                            聯絡 | Contact Me
+                            <i class="fab fa-telegram-plane project-icon button-icon"></i>
+                        </a>
+                    </div>
+                    <img src="img/project.png" alt="Project img" class="project-bg-img">
+                </div>
+            </div>
+        </section>
+
+        <!-- TESTIMONIAL -->
+        <section class="testimonial section">
+            <h2 class="section-title">評價 | Review</h2>
+            <span class="section-subtitle">我真實客戶的評價 | My client saying <br>評論可滑動 | Review Can Swap Move</span>
+
+            <div class="testimonial-container container swiper-container">
+                <div class="swiper-wrapper">
+                    <!-- TESTIMONIAL 1 -->
+                    <div class="testimonial-content swiper-slide">
+                        <div class="testimonial-data">
+                            <div class="testimonial-header">
+                                <img src="img/testimonial1.jpg" alt="Testimonial" class="testimonial-img">
+
+                                <div>
+                                    <h3 class="testimonial-name">奶蓋</h3>
+                                    <span class="testimonial-client">鼠鼠</span>
+                                </div>
+                            </div>
+                            <div>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                            </div>
+
+                        </div>
+                        <p class="testimonial-description">很棒的照顧. 
+                        </p>
+                    </div>
+                    <!-- TESTIMONIAL 2 -->
+                    <div class="testimonial-content swiper-slide">
+                        <div class="testimonial-data">
+                            <div class="testimonial-header">
+                                <img src="img/testimonial2.jpg" alt="Testimonial" class="testimonial-img">
+
+                                <div>
+                                    <h3 class="testimonial-name">鼠於泥</h3>
+                                    <span class="testimonial-client">鼠鼠</span>
+                                </div>
+                            </div>
+                            <div>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                            </div>
+                        </div>
+                        <p class="testimonial-description">給你一個完整的服務.
+                        </p>
+                    </div>
+                    <!-- TESTIMONIAL 3 -->
+                    <div class="testimonial-content swiper-slide">
+                        <div class="testimonial-data">
+                            <div class="testimonial-header">
+                                <img src="img/testimonial3.jpg" alt="Testimonial" class="testimonial-img">
+
+                                <div>
+                                    <h3 class="testimonial-name">鼠於泥</h3>
+                                    <span class="testimonial-client">鼠鼠</span>
+                                </div>
+                            </div>
+                            <div>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                                <i class="uis uis-star testimonial-icon-star"></i>
+                            </div>
+                        </div>
+                        <p class="testimonial-description">無微不至的愛. 
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Add Pagination -->
+                
+            </div>
+        </section>
+           
+
+    
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-bg">
+            <div class="footer-container container grid">
+                <div class="footer-texts">
+                    <h1 class="footer-title">鼠於泥</h1>
+                    <span class="footer-subtitle">專業養殖</span>
+                </div>
+
+                <ul class="footer-links">
+                    <li>
+                        <a href="../index.html#services" class="footer-link">提供 | Services</a>
+                    </li>
+                    <li>
+                        <a href="../index.html#trade" class="footer-link">交易 | Trade</a>
+                    </li>
+                    <li>
+                        <a href="../index.html#contact" class="footer-link">聯絡 | Contact Me</a>
+                    </li>
+                </ul>
+                <div class="footer-socials">
+                    <a href="https://www.facebook.com/hamsterforeverlove" target="_blank">
+                        <i class="fab fa-facebook-f footer-social"></i>
+                    </a>
+                    <a href="https://www.facebook.com/hamsterforeverlove" target="_blank">
+                        <i class="fab fa-twitter footer-social"></i>
+                    </a>
+                    <a href="https://www.facebook.com/hamsterforeverlove" target="_blank">
+                        <i class="fab fa-instagram footer-social"></i>
+                    </a>
+                </div>
+            </div>
+            <p class="footer-copy">&#169; 鼠於泥. 版權所有 盜版必究 1999-2099 <br>&#169; 鼠於泥. All right reserved 1999-2099</p>
+        </div>
+    </footer>
+
+
+    <!-- SCROLL TOP -->
+    <a href="#" class="scrollup" id="scroll-up">
+        <i class="fas fa-arrow-up scrollup-icon"></i>
+    </a>
+
+    <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/027d3564f6.js" crossorigin="anonymous"></script>
+
+    <!-- SWIPER JS -->
+    <script src="js/swiper-bundle.js"></script>
+
+
+    <!-- MAIN JS -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
